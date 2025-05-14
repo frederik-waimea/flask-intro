@@ -7,11 +7,11 @@ app = Flask(__name__)
 def home():
     return render_template("pages/home.jinja")
 
-@app.get("/test")
+@app.get("/test/")
 def test ():
     return render_template ("<h1>Testing ....1...2....3</h1>")
 
-@app.get ("about")
+@app.get ("/about/")
 def about ():
     return render_template ("tree")
 
