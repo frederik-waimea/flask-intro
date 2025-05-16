@@ -1,5 +1,15 @@
 from flask import Flask
 from flask import render_template
+from supabase import create_client
+from dotenv import load_dotenv
+import os
+app = Flask(__name__)
+#Get Environemt variables
+load_dotenv()
+SUPERBASE_URL= os.getenv("SUPERBASE_URL")
+SUPERBASE_KEY= os.getenv("SUPERBASE_KEY")
+
+supabase = create_client(SUPERBASE_URL,SUPERBASE_KEY)
 
 app = Flask(__name__)
 
