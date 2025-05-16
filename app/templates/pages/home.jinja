@@ -5,7 +5,29 @@
 {%endblock%}
 
 {%block content%} 
-<section> 
+<section id="hero">
+    <h1>Flask and Supabase Demo</h1>
+</section>
+
+
+<sectionid id= "things">
+{%for thing in things%}
+    <article>
+        <header>
+            {{things["name"]}}
+        </header>
+            Cost ${{things["cost"]}}
+        <footer>
+            Delete
+        </footer>
+    
+    
+    </article>
+
+
+    {{thing[name]}}
+{%endfor %}
+</section>
 
 <p>How are you today? I hope you're doing great!</p>
 {%endblock%}

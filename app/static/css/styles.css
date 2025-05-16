@@ -1,6 +1,8 @@
 #hero h1{
-front-size: 4rem;
+font-size: 4rem;
 padding: 0,5em;
+text-align: center;
+background-color: var(--pico-primary-background);
 
 }
 

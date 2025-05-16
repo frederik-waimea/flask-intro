@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 @app.get("/")
 def home():
-    response =supabase.table("things").select().execute()
+    response =supabase.table("things").select().order("name").execute()
     records = response.data
     return render_template("pages/home.jinja", things=records)
 
@@ -30,7 +30,7 @@ def about ():
 @app.get ("/random/")
 def random():
     randNum = randint (1, 1000)
-    return render_template("pages?random.jinja"); number = randNum
+    return render_template("pages/random.jinja"); number = randNum
 
 @app.errorhandler(404)
 def notFound(error):
