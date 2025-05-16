@@ -15,7 +15,9 @@ app = Flask(__name__)
 
 @app.get("/")
 def home():
-    return render_template("pages/home.jinja")
+    response =supabase.table("things").select().execute()
+    records = response.data
+    return render_template("pages/home.jinja", things=records)
 
 @app.get("/test/")
 def test ():
