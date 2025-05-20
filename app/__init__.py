@@ -6,10 +6,10 @@ import os
 app = Flask(__name__)
 #Get Environemt variables
 load_dotenv()
-SUPERBASE_URL= os.getenv("SUPERBASE_URL")
-SUPERBASE_KEY= os.getenv("SUPERBASE_KEY")
+SUPERBASE_URL= os.getenv("SUPABASE_URL")
+SUPERBASE_KEY= os.getenv("SUPABASE_KEY")
 
-supabase = create_client(SUPERBASE_URL,SUPERBASE_KEY)
+supabase = create_client(SUPABASE_URL,SUPABASE_KEY)
 
 app = Flask(__name__)
 
@@ -31,6 +31,13 @@ def about ():
 def random():
     randNum = randint (1, 1000)
     return render_template("pages/random.jinja"); number = randNum
+
+@app.get("/thing/<int:id>")
+def showThing(id):
+     response =supabase.table("things").select().eq("id", id).single().order("name").execute()
+     record = response.data
+     
+     return render_template("pages/home.jinja", thing=record)
 
 @app.errorhandler(404)
 def notFound(error):
