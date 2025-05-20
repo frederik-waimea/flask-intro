@@ -6,8 +6,8 @@ import os
 app = Flask(__name__)
 #Get Environemt variables
 load_dotenv()
-SUPERBASE_URL= os.getenv("SUPABASE_URL")
-SUPERBASE_KEY= os.getenv("SUPABASE_KEY")
+SUPABASE_URL= os.getenv("SUPABASE_URL")
+SUPABASE_KEY= os.getenv("SUPABASE_KEY")
 
 supabase = create_client(SUPABASE_URL,SUPABASE_KEY)
 
