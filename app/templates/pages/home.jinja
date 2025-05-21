@@ -14,15 +14,37 @@
 {%for thing in things%}
     <article>
         <header>
-            {{things["name"]}}
+            <h3>{{things["name"]}}</h3>
         </header>
-            Cost ${{things["cost"]}}
+           <p>Cost ${{things["cost"]}}</p> 
         <footer>
             Delete
         </footer>
     # description and rating
     
     </article>
+
+{%for thing in things%}
+
+    <article>
+        <header>
+        <h4>{{things["name"]}}</h4>
+        </header>
+        <p> #description</p>
+        <footer>
+        <a href= ""> More</a>
+
+        <a href = "#"> Delete</a>
+        </footer>
+    
+    
+    
+    
+    
+    </article>
+    
+{% endfor %}
+
 
 
     {{thing[name]}}

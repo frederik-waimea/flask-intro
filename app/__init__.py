@@ -38,7 +38,11 @@ def showThing(id):
      record = response.data
      
      return render_template("pages/home.jinja", thing=record)
+@app.get("/thing/<int:id>")
+def deleteThing(id):
+    # TODO!!!!!
 
+    return 
 @app.errorhandler(404)
 def notFound(error):
     return render_template ("pages/404.jinja")
